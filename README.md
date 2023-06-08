@@ -1,2 +1,2 @@
-# M242
+# M122
 Backup tool
