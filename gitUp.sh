@@ -10,13 +10,13 @@ if [ ! -f "" ]; then
 fi
 
 # Read branch name from config file
-branch_name=
+branch_name='auto_backups'
 
 # Get the current date
 commit_message=2023-06-08
 
 # Checkout the selected branch
-git checkout ""
+git checkout $branch_name
 
 # Add all changes to the staging area
 git add .
@@ -25,4 +25,4 @@ git add .
 git commit -m ""
 
 # Push changes to the remote repository
-git push origin ""
+git push
