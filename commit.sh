@@ -1,6 +1,7 @@
 #!/bin/bash
 
 commit() {
+    echo "$1"
     if [[ -z "$1" ]]; then
         echo "No Branch name provided" >> error.txt
         return 0

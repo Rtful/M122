@@ -1,28 +1,19 @@
 #!/bin/bash
 
+source commit.sh
+
 config_file="config.txt"
 error_file="error.txt"
 
+
 # Check if config file exists
-if [ ! -f "" ]; then
-    echo "Error: Config file '' not found." > ""
+if [ ! -f "$config_file" ]; then
+    echo "Error: Config file not found." >> error.txt
+    exit 1
+fi
+if [ -z "$config_file" ]; then
+    echo "Error: Config file is empty" >> error.txt
     exit 1
 fi
 
-# Read branch name from config file
-branch_name='auto_backups'
-
-# Get the current date
-commit_message=$(date +"%Y-%m-%d %H:%M:%S")
-
-# Checkout the selected branch
-git checkout $branch_name
-
-# Add all changes to the staging area
-git add .
-
-# Commit changes with the current date as the commit message
-git commit -m ""
-
-# Push changes to the remote repository
-git push
+commit $(cat $config_file)

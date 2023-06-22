@@ -1,1 +1,2 @@
-Error: Config file 'config.txt' not found.
+Error: Config file is empty
+No Branch name provided
