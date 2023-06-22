@@ -1,11 +1,22 @@
 #!/bin/bash
 
 commit() {
+    if [[ -z "$1" ]]; then
+        echo "No Branch name provided"
+        return 0
+    else 
+        branch_name = $1
+    fi
+
+    if [ ! git branch --list $branch_name ]; then
+        git branch $branch_name
+    fi
+
     # Get the current date
-    commit_message=$(date +%Y-%m-%d)
+    commit_message=$(date +"%Y-%m-%d %H:%M:%S")
 
     # Checkout the selected branch
-    git checkout "$branch_name"
+    git checkout $branch_name
 
     # Add all changes to the staging area
     git add .

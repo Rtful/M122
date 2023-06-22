@@ -13,7 +13,7 @@ fi
 branch_name='auto_backups'
 
 # Get the current date
-commit_message=2023-06-08
+commit_message=$(date +"%Y-%m-%d %H:%M:%S")
 
 # Checkout the selected branch
 git checkout $branch_name
