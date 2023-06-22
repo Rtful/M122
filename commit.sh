@@ -2,7 +2,7 @@
 
 commit() {
     if [[ -z "$1" ]]; then
-        echo "No Branch name provided"
+        echo "No Branch name provided" >> error.txt
         return 0
     else 
         branch_name = $1
