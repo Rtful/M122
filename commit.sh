@@ -1,17 +1,27 @@
 #!/bin/bash
-
+# Functions are used 1.6
 commit() {
-    echo "$1"
+    # If statement are used 1.1
+    # Parameters are used 1.2
     if [[ -z "$1" ]]; then
-        echo "No Branch name provided" >> error.txt
-        return 0
+        echo "Error: No Branch name provided" >> error.txt
+        tail -n 1 error.txt
+        return 1
     else 
-        branch_name = $1
+        branch_name=$1
     fi
 
-    if [ ! git branch --list $branch_name ]; then
-        git branch $branch_name
+    if ! git branch --list "$branch_name"; then
+        git branch "$branch_name"
     fi
+
+    # Get the current directory size
+    # Du is used 1.4
+    directory_size=$(du -sh .)
+
+    # Print the directory size
+    echo "Current directory size:"
+    echo "$directory_size"
 
     # Get the current date
     commit_message=$(date +"%Y-%m-%d %H:%M:%S")

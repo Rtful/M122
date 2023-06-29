@@ -1,2 +1,2 @@
 Error: Config file is empty
-No Branch name provided
+Error: No Branch name provided
