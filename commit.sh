@@ -8,7 +8,7 @@ commit() {
         tail -n 1 error.txt
         return 1
     else 
-        branch_name = $1
+        branch_name=$1
     fi
 
     if [ ! git branch --list $branch_name ]; then
