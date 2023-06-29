@@ -12,6 +12,7 @@ commit() {
     fi
 
     if ! git branch --list "$branch_name"; then
+        echo "test";
         git branch "$branch_name"
     fi
 
