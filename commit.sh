@@ -11,9 +11,8 @@ commit() {
         branch_name=$1
     fi
 
-    if ! git branch --list "$branch_name"; then
-        git branch "$branch_name"
-    fi
+    git checkout -b "$branch_name"
+
 
     # Get the current directory size
     # Du is used 1.4
