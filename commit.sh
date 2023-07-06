@@ -13,6 +13,8 @@ commit() {
 
     git checkout -b "$branch_name"
 
+    git push --set-upstream origin "$branch_name"
+
 
     # Get the current directory size
     # Du is used 1.4
